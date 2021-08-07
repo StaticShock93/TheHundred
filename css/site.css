@@ -5,6 +5,12 @@
     --white-color: #dff3e4;
 }
 
+.logoFont{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
 body {
     color: var(--dark-color);
 }
@@ -74,6 +80,14 @@ footer .social>a:hover {
     opacity: .9;
     color: var(--secondary-color);
 }
+
+button.btn{
+   background: var(--primary-color)
+}
+
+button.btn:hover{
+    background: hsl(207, 65%, 42%);
+ }
 
 
 .logo {
