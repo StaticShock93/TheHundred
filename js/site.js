@@ -2,9 +2,9 @@
 // starts or controller function
 function getValues() {
     // get values from the page
-    let startValue = document.getElementById("startValue").value;
-    let endValue = document.getElementById("endValue").value;
-    // We need to validate our input
+    let startValue = document.getElementById("startValue").value.min;
+    let endValue = document.getElementById("endValue").value.max;
+    // we need to validate our input
     // parse into Integers
     startValue = parseInt(startValue);
     endValue = parseInt(endValue);
@@ -16,7 +16,7 @@ function getValues() {
         displayNumbers(numbers);
 
     } else {
-        alert("You must enter integers");
+        alert("You must enter integers between 0 and 100");
     }
 
 
@@ -30,7 +30,7 @@ function generateNumbers(sValue, eValue) {
 
 
     // we want to get all numbers from start to end
-    for (let index = sValue; index <= 100; index++) {
+    for (let index = sValue; index <= eValue; index++) {
 
         // this will execute in a loop intil index = eValue
         numbers.push(index);
