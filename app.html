@@ -81,16 +81,12 @@
                     <h5>Enter Values</h5>
                     <form class="row gy-2 gx-2" action="">
                         <div class="col">
-                            <input
-                                onkeyup="if(this.value<0 || this.value > 100){{this.value= Math.floor(Math.random() * 100)}{alert('You must enter a number from 0-100')}}"
-                                id="startValue" type="number" class="form-control" placeholder="Start Value" value="0"
-                                min="0" max="100" aria-label="Start Value">
+                            <input id="startValue" type="number" class="form-control" placeholder="Start Value" min="0"
+                                max="100" value="0" aria-label="Start Value">
                         </div>
                         <div class="col">
-                            <input
-                                onkeyup="if(this.value>100 || this.value<0){{this.value= Math.floor(Math.random() * 100)}{alert('You must enter a number from 0-100')}}"
-                                id="endValue" type="number" class="form-control" placeholder="End Value" value="100"
-                                min="0" max="100" aria-label="End Value">
+                            <input id="endValue" type="number" class="form-control" placeholder="End Value" min="0"
+                                max="100" value="100" aria-label="End Value">
                         </div>
                         <div class="col-12 d-flex justify-content-center justify-content-lg-end">
                             <button type="button" id="btnSubmit" class="btn text-light btn-lg">Display the
@@ -153,6 +149,8 @@
     </script>
     <script>
         document.getElementById("btnSubmit").addEventListener("click", getValues);
+        document.getElementById("startValue").addEventListener("keyup", displayAlert);
+        document.getElementById("endValue").addEventListener("keyup", displayAlert);
     </script>
 </body>
 

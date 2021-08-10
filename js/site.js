@@ -23,12 +23,23 @@ function getValues() {
     }
 
 
+    if (startValue < 0 || startValue > 100) {
+        this.value = 0;
+        alert("You must enter a number from 0-100");
+    }
+
+    if (endValue < 0 || endValue > 100) {
+        this.value = Math.floor(Math.random() * 100);
+        alert("You must enter a number from 0-100");
+    }
+
+
 
 }
 
 
-// generate numbers from startValue to the endValue
-// logic function(s)
+// generate numbers from startValue to the endValue 0-100
+// logic function 1
 function generateNumbers(sValue, eValue) {
 
     let numbers = [];
@@ -43,6 +54,23 @@ function generateNumbers(sValue, eValue) {
     }
 
     return numbers;
+}
+
+// we want to only allow for input values from 0-100
+// logic function 2
+function displayAlert() {
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
+
+    if (startValue < 0 || startValue > 100) {
+        this.value = 0;
+        alert("You must enter a number from 0-100");
+    }
+
+    if (endValue < 0 || endValue > 100) {
+        this.value = 100;
+        alert("You must enter a number from 0-100");
+    }
 }
 
 // display the numbers and mark even numbers bold
