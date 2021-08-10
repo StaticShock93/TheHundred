@@ -8,8 +8,7 @@ function getValues() {
     // parse into Integers and only accept #'s from 0-100
     startValue = Math.min(Math.max(parseInt(startValue), 0), 100);
     endValue = Math.min(Math.max(parseInt(endValue), 0), 100);
-
-
+    
     if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
         // we call generateNumbers
         let numbers = generateNumbers(startValue, endValue);
@@ -21,18 +20,6 @@ function getValues() {
     } else {
         alert("You must enter integers only");
     }
-
-
-    if (startValue < 0 || startValue > 100) {
-        this.value = 0;
-        alert("You must enter a number from 0-100");
-    }
-
-    if (endValue < 0 || endValue > 100) {
-        this.value = Math.floor(Math.random() * 100);
-        alert("You must enter a number from 0-100");
-    }
-
 
 
 }
