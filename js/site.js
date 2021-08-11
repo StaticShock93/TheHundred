@@ -74,7 +74,7 @@ function displayNumbers(numbers) {
         if (number % 2 == 0) {
             className = "even";
         } else {
-            className = "odd"
+            className = "odd";
         }
         templateRows += `<tr><td class="${className}">${number}</td></tr>`;
 
