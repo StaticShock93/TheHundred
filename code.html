@@ -38,8 +38,8 @@
     <!-- ==== Nav Section ===== -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand logoFont" href="/index.html"><img class="logo me-2" src="/img/CIB-mark-shadowAlt-SVG.svg"
-                    width="30" height="24" alt="mark">THE HUNDRED</a>
+            <a class="navbar-brand logoFont" href="/index.html"><img class="logo me-2"
+                    src="/img/CIB-mark-shadowAlt-SVG.svg" width="30" height="24" alt="mark">THE HUNDRED</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -56,7 +56,8 @@
                         <a class="nav-link active" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/StaticShock93/TheHundred">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/StaticShock93/TheHundred">Git
+                            Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://chactaibrice.netlify.app/">About</a>
@@ -74,91 +75,80 @@
                 <div class="col-lg-8 line-numbers">
                     <pre class="line-numbers" data-src="plugins/line-numbers/prism-line-numbers.js"><code class="language-javascript">
                         // get the values from the Page
-// starts or controller function
-function getValues() {
-    // get values from the page
-    let startValue = document.getElementById("startValue").value;
-    let endValue = document.getElementById("endValue").value;
-    // we need to validate our input
-    // parse into Integers and only accept #'s from 0-100
-    startValue = Math.min(Math.max(parseInt(startValue), 0), 100);
-    endValue = Math.min(Math.max(parseInt(endValue), 0), 100);
-    
-    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
-        // we call generateNumbers
-        let numbers = generateNumbers(startValue, endValue);
-
-        // we call displayNumbers
-        displayNumbers(numbers);
-
-
-    } else {
-        alert("You must enter integers only");
-    }
-
-
-}
-
-
-// generate numbers from startValue to the endValue 0-100
-// logic function 1
-function generateNumbers(sValue, eValue) {
-
-    let numbers = [];
-
-
-    // we want to get all numbers from start to end
-    for (let index = sValue; index <= eValue; index++) {
-
-        // this will execute in a loop until index = eValue
-        numbers.push(index);
-
-    }
-
-    return numbers;
-}
-
-// we want to only allow for input values from 0-100
-// logic function 2
-function displayAlert() {
-    let startValue = document.getElementById("startValue").value;
-    let endValue = document.getElementById("endValue").value;
-
-    if (startValue < 0 || startValue > 100) {
-        this.value = 0;
-        alert("You must enter a number from 0-100");
-    }
-
-    if (endValue < 0 || endValue > 100) {
-        this.value = 100;
-        alert("You must enter a number from 0-100");
-    }
-}
-
-// display the numbers and mark even numbers bold
-// display or view function
-function displayNumbers(numbers) {
-
-    let templateRows = "";
-
-    for (let index = 0; index < numbers.length; index++) {
-
-        let className = "even";
-        let number = numbers[index];
-
-        if (number % 2 == 0) {
-            className = "even";
-        } else {
-            className = "odd";
-        }
-        //This does not render correctly with Prism, see the source
-        templateRows += `<tr><td class="${className}">${number}</td></tr>`;
-
-    }
-
-    document.getElementById("results").innerHTML = templateRows;
-
-}
+                        // starts or controller function
+                        function getValues() {
+                            // get values from the page
+                            let startValue = document.getElementById("startValue").value;
+                            let endValue = document.getElementById("endValue").value;
+                            // we need to validate our input
+                            // parse into Integers and only accept #'s from 0-100
+                            startValue = Math.min(Math.max(parseInt(startValue), 0), 100);
+                            endValue = Math.min(Math.max(parseInt(endValue), 0), 100);
+                        
+                            if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                                // we call generateNumbers
+                                let numbers = generateNumbers(startValue, endValue);
+                                // we call displayNumbers
+                                displayNumbers(numbers);
+                            } else {
+                                alert("You must enter integers only");
+                            }
+                        }
+                        
+                        
+                        // generate numbers from startValue to the endValue 0-100
+                        // logic function 1
+                        function generateNumbers(sValue, eValue) {
+                        
+                            let numbers = [];
+                            // we want to get all numbers from start to end
+                            for (let index = sValue; index <= eValue; index++) {
+                        
+                                // this will execute in a loop until index = eValue
+                                numbers.push(index);
+                            }
+                            return numbers;
+                        }
+                        
+                        // we want to only allow for input values from 0-100
+                        // logic function 2
+                        function displayAlert() {
+                            let startValue = document.getElementById("startValue").value;
+                            let endValue = document.getElementById("endValue").value;
+                        
+                            if (startValue < 0 || startValue > 100) {
+                                this.value = 0;
+                                alert("You must enter a number from 0-100");
+                            }
+                            if (endValue < 0 || endValue > 100) {
+                                this.value = 100;
+                                alert("You must enter a number from 0-100");
+                            }
+                        }
+                        
+                        // display the numbers and mark even numbers bold
+                        // display or view function
+                        function displayNumbers(numbers) {
+                        
+                            let templateRows = "";
+                        
+                            for (let index = 0; index < numbers.length; index++) {
+                        
+                                let className = "even";
+                                let number = numbers[index];
+                        
+                                if (number % 2 == 0) {
+                                    className = "even";
+                                } else {
+                                    className = "odd";
+                                }
+                                //This does not render correctly with prism, see the source.
+                                templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+                        
+                            }
+                            document.getElementById("results").innerHTML = templateRows;
+                        
+                        }
                         
                         
                         
@@ -207,7 +197,8 @@ function displayNumbers(numbers) {
                         and a template literal. The loop outputs a string, which will be the current value of the index
                         of the number within the array of values generated. The loop continues this process for each
                         index value within the array as long as the index remains less than the length of the array. The
-                        template literal inserts the string created in its own table row after each loop. The if/else
+                        template literal is used to concatenate the empty string with the number value of the current
+                        index within the array. The if/else
                         statement marks the even numbers in bold by using a modulo equation that sets their HTML class
                         to 'even'. The function places this output in the table body of the results section by using the
                         getElementById().innerHTML property-method.</p>
